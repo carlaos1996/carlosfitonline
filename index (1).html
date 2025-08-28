@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Fit Online - Soluciones de Entrenamiento Personalizado</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+        :root {
+            --primary-color: #0a2540;
+            --secondary-color: #ffffff;
+            --accent-color: #27e8a7;
+            --text-color: #333;
+            --light-gray: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--secondary-color);
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        #hero {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 4rem auto;
+        }
+
+        #services {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--secondary-color);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card .icon {
+            height: 50px;
+            width: 50px;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        #how-it-works {
+            text-align: center;
+        }
+
+        .how-it-works-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .step {
+            max-width: 250px;
+            text-align: center;
+            position: relative;
+            margin: 1rem;
+        }
+        
+        .step .number {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem auto;
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #testimonials {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .testimonial-card p.quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p.author {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        #cta {
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+
+        #cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        #cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">Carlos Fit<span>.</span>Online</div>
+            <a href="#cta" class="btn btn-primary">Agenda tu Consulta</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Más que un Entrenamiento, una Solución para tu Vida.</h1>
+                <p>Deja atrás los planes genéricos. Descubre un coaching online 100% personalizado que se adapta a tus verdaderas necesidades, desde controlar la diabetes hasta aliviar el dolor de espalda y alcanzar tu máximo potencial.</p>
+                <a href="#cta" class="btn btn-primary">Agenda tu Consulta Gratuita</a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Soluciones de Fitness a tu Medida</h2>
+                <p class="section-subtitle">Tu cuerpo y tus metas son únicos. Tu plan de entrenamiento también debería serlo. Creamos programas específicos para tus necesidades.</p>
+                <div class="services-grid">
+                    
+                    <div class="service-card">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        <h3>Plan para Diabéticos</h3>
+                        <p>Entrenamiento seguro y efectivo para controlar la glucosa, mejorar la sensibilidad a la insulina y aumentar tu energía.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <h3>Alivio del Dolor de Espalda</h3>
+                        <p>Fortalece tu core y mejora tu postura con ejercicios terapéuticos para que te muevas sin dolor y con confianza.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.153.34c-1.325 0-2.56-.5-3.5-1.375m-2.62-10.726c.122.499.106 1.028.589 1.202a5.989 5.989 0 012.153.34c1.325 0 2.56-.5 3.5-1.375m-13.5 0c-1.01.143-2.01.317-3 .52m3-.52l-2.62 10.726c-.122.499.106 1.028.589 1.202a5.989 5.989 0 002.153.34c1.325 0 2.56-.5 3.5-1.375" /></svg>
+                        <h3>Pérdida de Peso</h3>
+                        <p>Acelera tu metabolismo y quema grasa con un plan sostenible que crea hábitos saludables y duraderos.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12A2.25 2.25 0 0020.25 14.25V3M3.75 21h16.5M16.5 3.75h.008v.008h-.008V3.75z" /></svg>
+                        <h3>Fuerza y Potencia</h3>
+                        <p>Maximiza tus ganancias de fuerza y músculo con un programa basado en sobrecarga progresiva y técnica perfecta.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 2.25a14.98 14.98 0 00-5.84 7.38m5.84 2.58a14.98 14.98 0 017.38 5.84m-7.38-5.84a14.98 14.98 0 00-7.38 5.84m7.38-5.84l-2.58 5.84m2.58-5.84l5.84 2.58m-5.84-2.58l5.84-2.58m-5.84 2.58l-2.58-5.84" /></svg>
+                        <h3>Tonificación y Definición</h3>
+                        <p>Esculpe tu figura combinando entrenamiento de resistencia y acondicionamiento metabólico para un físico definido.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+                        <h3>Movilidad y Flexibilidad</h3>
+                        <p>Reduce la rigidez, aumenta tu rango de movimiento y siéntete más ágil y libre en tu día a día.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <h2 class="section-title">Tu Transformación en 4 Pasos</h2>
+                <p class="section-subtitle">Nuestro proceso está diseñado para ser simple, de apoyo y centrado en ti.</p>
+                <div class="how-it-works-steps">
+                    <div class="step">
+                        <div class="number">1</div>
+                        <h3>Consulta Inicial</h3>
+                        <p>Discutimos tus metas, historial y desafíos en una llamada gratuita para entenderte a fondo.</p>
+                    </div>
+                    <div class="step">
+                        <div class="number">2</div>
+                        <h3>Diseño del Plan</h3>
+                        <p>Creamos tu plan 100% personalizado con videos y explicaciones claras de cada ejercicio.</p>
+                    </div>
+                    <div class="step">
+                        <div class="number">3</div>
+                        <h3>Soporte Continuo</h3>
+                        <p>Estamos contigo vía WhatsApp y revisiones periódicas para resolver dudas y mantenerte motivado.</p>
+                    </div>
+                    <div class="step">
+                        <div class="number">4</div>
+                        <h3>Ajuste y Progresión</h3>
+                        <p>Tu plan evoluciona contigo. Lo ajustamos para que nunca te estanques y sigas viendo resultados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                <p class="section-subtitle">La confianza es clave. Aquí irán los testimonios de personas que ya han transformado sus vidas.</p>
+                <div class="testimonial-card">
+                    <p class="quote">"¡Este es un espacio para un testimonio increíble! Después de probar de todo, el enfoque personalizado de FitCoach Online fue lo único que me ayudó a aliviar mi dolor de espalda y volver a jugar con mis hijos."</p>
+                    <p class="author">- Nombre del Cliente, Programa de Dolor de Espalda</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="section">
+            <div class="container">
+                <h2>¿Listo para Invertir en tu Salud?</h2>
+                <p>Da el primer paso hacia una solución de fitness que realmente funciona porque está diseñada solo para ti.</p>
+                <a href="http://wa.me/50361388271" class="btn btn-primary">Agenda tu Consulta Gratuita Ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Carlos Fit Online. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
